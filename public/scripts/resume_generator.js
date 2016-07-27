@@ -10,15 +10,15 @@ var Resume = React.createClass({
 });
 
 var ResumeWapper = React.createClass({
-  toggle: function(){
+  handleClick() {
     this.setState({isHidden: !this.state.isHidden});
   },
   render: function() {
     return (
       <div className="resumeWrapper">
-        {!this.props.isHidden? <ResumeHeader title="Languages" onClick={this.toggle}/> : <LanguageResumeItem onClick={this.toggle}/>}
-        {!this.props.isHidden? <ResumeHeader title="Experience" onClick={this.toggle}/> : <ExperienceResumeItem onClick={this.toggle}/>}
-        {!this.props.isHidden? <ResumeHeader title="Education" onClick={this.toggle}/> : <EducationResumeItem onClick={this.toggle}/>}
+        {!this.props.isHidden? <ResumeHeader title="Languages" onClick={this.handleClick}/> : <LanguageResumeItem onClick={this.toggle}/>}
+        {!this.props.isHidden? <ResumeHeader title="Experience" onClick={this.handleClick}/> : <ExperienceResumeItem onClick={this.toggle}/>}
+        {!this.props.isHidden? <ResumeHeader title="Education" onClick={this.handleClick}/> : <EducationResumeItem onClick={this.toggle}/>}
       </div>
     );
   }
