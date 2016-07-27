@@ -26,7 +26,11 @@ var ResumeItem = React.createClass({
   }
 });
 
-
+var data = [
+  {id: 1, title: "Languages", text: "This is one comment"},
+  {id: 2, title: "Experience", text: "This is another comment"}
+  {id: 3, title: "Education", text: "This is another comment"}
+];
 
 
 ReactDOM.render(
