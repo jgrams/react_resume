@@ -2,15 +2,14 @@ var ResumeHeader = React.createClass({
   render: function() {
     return (
       <div className="resumeContainer">
-      <h1>Resume</h1>
-        <ResumeItem />
-        <ResumeItem />
-        <ResumeItem />
+      <h1>John Gramila's Resume</h1>
+        <ResumeItem title="Experience">Proficient: Ruby, Rails, HTML, CSS, Command Line</ResumeItem>
+        <ResumeItem title="Experience">Experienced: Javascript, JQuery, Git, Bootstrap, React</ResumeItem>
+        <ResumeItem title="Experience">Familiar: GIMP,  SQL, Excel</ResumeItem>
       </div>
     );
   }
 });
-
 
 var ResumeItem = React.createClass({
   render: function() {
@@ -19,12 +18,29 @@ var ResumeItem = React.createClass({
         <h2 className="resumeTitle">
           {this.props.title}
         </h2>
-        {this.props.children}
+        <ul className="resumeContent">
+          <ResumeText />
+        </ul>
       </div>
     );
   }
 });
 
+var ResumeText = React.createClass({
+  render: function() {
+    return (
+      <li>{this.props.text}</li>
+    );
+  }
+});
+
+
+
+var data = [
+  {id: 1, title: "Languages", text: "This is one comment"},
+  {id: 2, title: "Experience", text: "This is another comment"}
+  {id: 3, title: "Education", text: "This is another comment"}
+];
 
 
 ReactDOM.render(
