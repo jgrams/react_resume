@@ -3,13 +3,36 @@ var ResumeHeader = React.createClass({
     return (
       <div className="resumeContainer">
         <h1>John Gramila's Resume</h1>
-          <LanguageResumeItem/>
-          <ExperienceResumeItem/>
-          <EducationResumeItem/>
+          <ResumerWapper/>
       </div>
     );
   }
 });
+
+var ResumeWapper = React.createClass({
+  render: function() {
+    return (
+      <div className="resumeWrapper">
+        {!this.props.isHidden? <ResumeHeader title="Languages"/> : <LanguageResumeItem/>}
+        {!this.props.isHidden? <ResumeHeader title="Experience"/> : <ExperienceResumeItem/>}
+        {!this.props.isHidden? <ResumeHeader title="Education"/> : <EducationResumeItem/>}
+      </div>
+    );
+  }
+});
+
+var ResumeHeader = React.createClass({
+  render: function() {
+    return (
+      <div className="resumeHeader">
+        {this.props.title }
+        {!this.props.isHidden? <ResumeHeader/> : <LanguageResumeItem/>}
+        {!this.props.isHidden? <ResumeHeader/> : <LanguageResumeItem/>}
+      </div>
+    );
+  }
+});
+
 
 
 var LanguageResumeItem = React.createClass({
