@@ -1,13 +1,33 @@
-var CommentBox = React.createClass({
+var ResumeHeader = React.createClass({
   render: function() {
     return (
-      <div className="sectionHeader">
-        Hello, world! I am a sectionHeader.
+      <div className="resumeContainer">
+      <h1>Resume</h1>
+        <ResumeItem />
+        <ResumeItem />
+        <ResumeItem />
       </div>
     );
   }
 });
+
+
+var ResumeItem = React.createClass({
+  render: function() {
+    return (
+      <div className="resumeItem">
+        <h2 className="resumeTitle">
+          {this.props.title}
+        </h2>
+        {this.props.children}
+      </div>
+    );
+  }
+});
+
+
+
 ReactDOM.render(
-  <CommentBox />,
+  <ResumeHeader />,
   document.getElementById('content')
 );
