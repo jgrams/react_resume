@@ -18,29 +18,15 @@ var ResumeItem = React.createClass({
         <h2 className="resumeTitle">
           {this.props.title}
         </h2>
-        <ul className="resumeContent">
-          <ResumeText />
-        </ul>
+        <div className="resumeContent">
+          {this.props.children}
+        </div>
       </div>
     );
   }
 });
 
-var ResumeText = React.createClass({
-  render: function() {
-    return (
-      <li>{this.props.text}</li>
-    );
-  }
-});
 
-
-
-var data = [
-  {id: 1, title: "Languages", text: "This is one comment"},
-  {id: 2, title: "Experience", text: "This is another comment"}
-  {id: 3, title: "Education", text: "This is another comment"}
-];
 
 
 ReactDOM.render(
