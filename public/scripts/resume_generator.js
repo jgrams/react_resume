@@ -11,10 +11,12 @@ var ResumeHeader = React.createClass({
   }
 });
 
+
 var LanguageResumeItem = React.createClass({
   render: function() {
     return (
-      <div></div>
+    <div className="resumeWrapper">
+      <div className="visibleResumeContainer"></div>
       <div className="hiddenResumeContainer">
         <h1>Languages</h1>
           <ul>
@@ -23,6 +25,7 @@ var LanguageResumeItem = React.createClass({
             <li>Familiar: GIMP,  SQL, Excel</li>
           </ul>
       </div>
+    </div>
     );
   }
 });
@@ -30,7 +33,8 @@ var LanguageResumeItem = React.createClass({
 var ExperienceResumeItem = React.createClass({
   render: function() {
     return (
-      <div></div>
+    <div className="resumeWrapper">
+      <div className="visibleResumeContainer"></div>
       <div className="hiddenResumeContainer">
       <h1>Experience</h1>
         <h2>SpeakEasy - Development Intern</h2>
@@ -39,6 +43,7 @@ var ExperienceResumeItem = React.createClass({
         <h2>Groupon - Deal Qualifier</h2>
         <h2>Windy City Weasels - Chief of Public Information</h2>
       </div>
+    </div>
     );
   }
 });
@@ -46,13 +51,15 @@ var ExperienceResumeItem = React.createClass({
 var EducationResumeItem = React.createClass({
   render: function() {
     return (
-      <div></div>
+    <div className="resumeWrapper">
+      <div className="visibleResumeContainer"></div>
       <div className="hiddenResumeContainer">
       <h1>Education</h1>
         <ul>
           <li>Lawrence University, Appleton- Philosophy, English: 2004 – 2008</li>
         </ul>
       </div>
+    </div>
     );
   }
 });
