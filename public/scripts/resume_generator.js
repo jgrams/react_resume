@@ -3,53 +3,57 @@ var ResumeHeader = React.createClass({
     return (
       <div className="resumeContainer">
       <h1>John Gramila's Resume</h1>
-        <ResumeList data={this.props.data} />
+        <LanguageResumeItem/>
+        <ExperienceResumeItem/>
+        <EducationResumeItem/>
       </div>
     );
   }
 });
 
-var ResumeList = React.createClass({
-  render: function() {
-    var resumeNodes = this.props.data.map(function(resume_item) {
-      return (
-        <ResumeItem title={resume_item.title} key={resume_item.id}>
-          {resume_item.text}
-        </ResumeItem>
-      );
-    });
-    return (
-      <div className="commentList">
-        {resumeNodes}
-      </div>
-    );
-  }
-});
-
-
-var ResumeItem = React.createClass({
+var LanguageResumeItem = React.createClass({
   render: function() {
     return (
-      <div className="resumeItem">
-        <h2 className="resumeTitle">
-          {this.props.title}
-        </h2>
-        <div className="resumeContent">
-          {this.props.children}
-        </div>
+      <div className="hiddenResumeContainer">
+        <h1>Languages</h1>
+          <ul>
+            <li>Proficient: Ruby, Rails, HTML, CSS, Command Line</li>
+            <li>Experienced: Javascript, JQuery, Git, Bootstrap, React</li>
+            <li>Familiar: GIMP,  SQL, Excel</li>
+          </ul>
       </div>
     );
   }
 });
 
-var data = [
-  {id: 1, title: "Languages", text: "This is one comment"},
-  {id: 2, title: "Experience", text: "This is another comment"},
-  {id: 3, title: "Education", text: "This is another comment"}
-];
+var ExperienceResumeItem = React.createClass({
+  render: function() {
+    return (
+      <div className="hiddenResumeContainer">
+      <h1>Experience</h1>
+        <h2>SpeakEasy - Development Intern</h2>
+        <h2>Startup Institute - Web Development Bootcamp</h2>
+        <h2></h2>
+      </div>
+    );
+  }
+});
+
+var EducationResumeItem = React.createClass({
+  render: function() {
+    return (
+      <div className="hiddenResumeContainer">
+      <h1>Education</h1>
+        <ul>
+          <li>Lawrence University, Appleton- Philosophy, English: 2004 – 2008</li>
+        </ul>
+      </div>
+    );
+  }
+});
 
 
 ReactDOM.render(
-  <ResumeHeader data={data}/>,
+  <ResumeHeader/>,
   document.getElementById('content')
 );
