@@ -30,7 +30,7 @@ var ResumeHeader = React.createClass({
     }
     else {
       return (
-        <ResumeItem onClick={this.onClick}/>
+        <ResumeItem/>
       );
     }
   }
