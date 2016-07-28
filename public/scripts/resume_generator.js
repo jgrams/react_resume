@@ -30,7 +30,7 @@ var ResumeHeader = React.createClass({
     }
     else {
       return (
-        <ResumeItem/>
+        <ResumeItem handleOnClick={this.onClick}/>
       );
     }
   }
@@ -39,7 +39,7 @@ var ResumeHeader = React.createClass({
 var ResumeItem = React.createClass({
   render: function() {
     return (
-      <div className="resumeContent" onClick={this.onClick}>
+      <div className="resumeContent" onClick={this.props.handleOnClick}>
         <h1>{this.props.title}</h1>
         <LanguagesContent/>
       </div>
