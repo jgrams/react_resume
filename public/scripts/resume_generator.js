@@ -3,22 +3,11 @@ var Resume = React.createClass({
     return (
       <div className="resumeContainer">
         <h1>John Gramila's Resume</h1>
-        <ResumeWapper/>
-      </div>
-    );
-  }
-});
-
-var ResumeWapper = React.createClass({
-  handleClick() {
-    this.setState({isHidden: !this.state.isHidden});
-  },
-  render: function() {
-    return (
-      <div className="resumeWrapper">
-        {!this.props.isHidden? <ResumeHeader title="Languages" onClick={this.handleClick}/> : <LanguageResumeItem onClick={this.toggle}/>}
-        {!this.props.isHidden? <ResumeHeader title="Experience" onClick={this.handleClick}/> : <ExperienceResumeItem onClick={this.toggle}/>}
-        {!this.props.isHidden? <ResumeHeader title="Education" onClick={this.handleClick}/> : <EducationResumeItem onClick={this.toggle}/>}
+        <div className="resumeWrapper">
+          <ResumeHeader title="Languages"/>
+          <ResumeHeader title="Experience"/>
+          <ResumeHeader title="Education"/>
+        </div>
       </div>
     );
   }
@@ -28,59 +17,69 @@ var ResumeHeader = React.createClass({
   getInitialState: function(){
     return {isHidden: false};
   },
+  onClick: function() {
+    this.setState({ isHidden : !this.state.isHidden} );
+  },
+  render: function() {
+    if(!this.state.isHidden){
+      return (
+        <div className="resumeHeader" onClick={this.onClick}>
+          <h2>{this.props.title}</h2>
+        </div>
+      )
+    }
+    else {
+      return (
+        <ResumeItem onClick={this.onClick}/>
+      );
+    }
+  }
+});
+
+var ResumeItem = React.createClass({
   render: function() {
     return (
-      <div className="resumeHeader">
-        <h2>{this.props.title}</h2>
+      <div className="resumeContent" onClick={this.onClick}>
+        <h1>{this.props.title}</h1>
+        <LanguagesContent/>
       </div>
     );
   }
 });
 
-
-
-var LanguageResumeItem = React.createClass({
+var LanguagesContent = React.createClass({
   render: function() {
     return (
-      <div className="resumeContent">
-        <h1>Languages</h1>
-          <ul>
-            <li>Proficient: Ruby, Rails, HTML, CSS, Command Line</li>
-            <li>Experienced: Javascript, JQuery, Git, Bootstrap, React</li>
-            <li>Familiar: GIMP,  SQL, Excel</li>
-          </ul>
-      </div>
+      <ul>
+        <li>Proficient: Ruby, Rails, HTML, CSS, Command Line</li>
+        <li>Experienced: Javascript, JQuery, Git, Bootstrap, React</li>
+        <li>Familiar: GIMP,  SQL, Excel</li>
+      </ul>
     );
   }
 });
 
-var ExperienceResumeItem = React.createClass({
+
+var ExperienceContent = React.createClass({
   render: function() {
     return (
-      <div className="resumeContent">
-        <h2>Experience</h2>
-          <ul>
-            <h3>SpeakEasy - Development Intern</h3>
-            <h3>Startup Institute - Web Development Bootcamp</h3>
-            <h3>Groupon - Web Content Specialist</h3>
-            <h3>Groupon - Deal Qualifier</h3>
-            <h3>Windy City Weasels - Chief of Public Information</h3>
-          </ul>
-      </div>
+      <ul>
+        <li>Proficient: Ruby, Rails, HTML, CSS, Command Line</li>
+        <li>Experienced: Javascript, JQuery, Git, Bootstrap, React</li>
+        <li>Familiar: GIMP,  SQL, Excel</li>
+      </ul>
     );
   }
 });
 
-var EducationResumeItem = React.createClass({
+
+var EducationContent = React.createClass({
   render: function() {
     return (
-      <div className="resumeContent">
-        <h2>Education</h2>
-        <ul>
-          <li>Lawrence University, Appleton- Philosophy, English: 2004 – 2008</li>
-          <li>Startup Institute - Web Development Bootcamp: 2016</li>
-        </ul>
-      </div>
+      <ul>
+        <li>Lawrence University, Appleton- Philosophy, English: 2004 – 2008</li>
+        <li>Startup Institute - Web Development Bootcamp: 2016</li>
+      </ul>
     );
   }
 });
