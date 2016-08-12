@@ -1,8 +1,4 @@
-[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
-
-# React Tutorial
-
-This is the React comment box example from [the React tutorial](http://facebook.github.io/react/docs/tutorial.html).
+Resume example build using React for John Gramila.
 
 ## To use
 
@@ -53,4 +49,3 @@ You can change the port number by setting the `$PORT` environment variable befor
 ```sh
 PORT=3001 node server.js
 ```
-# react_resume
