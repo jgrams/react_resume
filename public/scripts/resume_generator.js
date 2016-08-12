@@ -108,6 +108,15 @@ var CoverLetter = React.createClass({
   }
 });
 
+var coverLetterObject = {
+ 1: {title: "Rails", text:"something pasted"}, 
+ 1: {title: "Javascript", text:"something pasted"},
+ 2: {title: "React", text:"something pasted"},
+ 3: {title: "Another Langugage", text:"something pasted"},
+ 4: {title: "Agile", text:"something pasted"},
+ 5: {title: "Diplomacy", text:"something pasted"},
+};
+
 var CoverLetterButtonWrapper = React.createClass({
   render: function() {
     return (
