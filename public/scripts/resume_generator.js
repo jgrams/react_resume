@@ -96,7 +96,7 @@ var EducationContent = React.createClass({
     );
   }
 });
-/*
+
 var CoverLetter = React.createClass({
   render: function() {
     return (
@@ -141,7 +141,7 @@ var CoverLetterTextWrapper = React.createClass({
   render: function() {
     return (
       <div className="coverLetterTextWrapper">
-        <CoverLetterText>
+        <CoverLetterText/>
       </div>
     );
   }
@@ -154,7 +154,7 @@ var CoverLetterText = React.createClass({
     );
   }
 });
-*/
+
 ReactDOM.render(
   <Resume/>,
   document.getElementById('content')
