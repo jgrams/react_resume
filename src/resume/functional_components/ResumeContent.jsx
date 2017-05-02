@@ -3,7 +3,7 @@ import React from 'react';
 function ResumeContent({ section }) {
 	return (
 		<div className="resumeContainer resumeContent">
-			<ul>
+			<ul className={ section.name } >
 				{ section.content.map(description =>
 					<li>{ description }</li>
 				)}

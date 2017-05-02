@@ -24,9 +24,9 @@ class ResumeObject extends Component {
 
 	render () {
 		return (
-	        <div className="resumeItems" >
+	        <div className="resume" >
 	        	{ this.state.resumeItems.map(section => {
-					return <ResumeWrapper key={section.id} section={section} />
+					return <ResumeWrapper key={ section.id } section={ section } />
 				})}
 	        </div>
 		);
