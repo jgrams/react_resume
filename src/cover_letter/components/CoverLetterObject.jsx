@@ -35,8 +35,10 @@ class CoverLetterObject extends Component {
 					})}
 		        </div>
 		        <div className="coverLetterContents" >
-	        		{ this.state.coverLetterItems.map(cover_letter => {
-						return <CoverLetterContent key={ cover_letter.id } cover_letter={ cover_letter } />
+		        	{ this.state.coverLetterItems.map(cover_letter => {
+		        		if(cover_letter.active){
+							return <CoverLetterContent key={ cover_letter.id } cover_letter={ cover_letter } />
+		        		}
 					})}
 		        </div>
 	        </div>
