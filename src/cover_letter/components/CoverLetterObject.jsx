@@ -31,7 +31,7 @@ class CoverLetterObject extends Component {
 	        <div className="coverLetter" >
 		        <div className="coverLetterButtons" >
 		        	{ this.state.coverLetterItems.map(cover_letter => {
-						return <CoverLetterButton key={ cover_letter.id } cover_letter={ cover_letter } onClick={ this.toggleView } />
+						return <CoverLetterButton key={ cover_letter.id } cover_letter={ cover_letter } toggle_view={ this.toggleView } />
 					})}
 		        </div>
 		        <div className="coverLetterContents" >

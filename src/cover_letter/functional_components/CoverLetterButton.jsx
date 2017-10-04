@@ -1,8 +1,9 @@
 import React from 'react';
 
-function CoverLetterButton({ cover_letter }) {
+function CoverLetterButton({ cover_letter }, { toggle_view }) {
+	console.log({toggle_view})
 	return (
-		<button>
+		<button onClick={ toggle_view }>
   				{ cover_letter.header }
 	    </button>
 	);
